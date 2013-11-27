@@ -39,10 +39,12 @@
 *                          #ELIF or #ELSE until it reached #ENDIF.  This keeps
 *                          the parser from getting lost counting braces and
 *                          parenthesis. - Steve Karg
+*          9: 27-Nov-2013: Increased line length to 255, and functions to 64.
+*                          Fixed filename pointer compile warnings.
 *
 **************************************************************************/
-static char version_date[]   = {"05-Jun-1998"};
-static char version_number[] = {"1.08"};
+static char version_date[]   = {"27-Nov-2013"};
+static char version_number[] = {"1.09"};
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -53,8 +55,8 @@ static char version_number[] = {"1.08"};
 #include <string.h>
 
 /* LOCAL CONTSTANTS */
-#define MAX_LINE_SIZE (80)
-#define MAX_FUNCTION_NAME (32)
+#define MAX_LINE_SIZE (255)
+#define MAX_FUNCTION_NAME (64)
 #define TRUE (1)
 #define FALSE (0)
 
@@ -1200,7 +1202,7 @@ void Interpret_Arguments(int argc, char *argv[])
         /* save info to a file */
         case 'f':
         case 'F':
-          sscanf(p_arg+2,"%s",&Append_File_Name);
+          sscanf(p_arg+2,"%s",&Append_File_Name[0]);
           break;
 
         /* Header with WKS files */
@@ -1223,7 +1225,7 @@ void Interpret_Arguments(int argc, char *argv[])
     else
     {
       /* standard arg is the C filename to be counted */
-      sscanf(p_arg,"%s",&C_Filename);
+      sscanf(p_arg,"%s",&C_Filename[0]);
     }
   } /* end of arg loop */
 }
