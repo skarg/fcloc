@@ -198,7 +198,7 @@ int main(int argc,char *argv[])
   char last_char;      /* the previous char read in from file */
   char new_char;       /* the current char read in from file */
 
-  char token[MAX_LINE_SIZE]; /* word in file */
+  char token[MAX_LINE_SIZE-1]; /* word in file */
   char token1[MAX_LINE_SIZE]; /* used for tokenizing characters */
   char token2[MAX_LINE_SIZE];/* another word in a file. */
   char last_token[MAX_LINE_SIZE];/* previous token */
