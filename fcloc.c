@@ -41,10 +41,10 @@
 *                          parenthesis. - Steve Karg
 *          9: 27-Nov-2013: Increased line length to 255, and functions to 64.
 *                          Fixed filename pointer compile warnings.
-*
+*         11: 19-Oct-2022: Shortened token by 1 to avoid sprintf buffer overrun.
 **************************************************************************/
-static char version_date[]   = {"27-Nov-2013"};
-static char version_number[] = {"1.09"};
+static char version_date[]   = {"19-Oct-2022"};
+static char version_number[] = {"1.11"};
 
 #include <stdio.h>
 #include <stdlib.h>
